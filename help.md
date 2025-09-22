@@ -112,3 +112,11 @@ Migrációk státuszának lekérdezése:
 ```sh
 php artisan migrate:status
 ```
+
+## Seedelés
+
+Migrációk nulláról és DatabaseSeeder futtatás egyben:
+
+```sh
+php artisan migrate:fresh --seed
+```
