@@ -1,0 +1,10 @@
+HF (10.06. -> 10.13.)
+
+- select és checkboxlista állapottartása
+- update művelet
+  - edit: GET /posts/{post}/edit
+  - update: PATCH /posts/{post}
+    - nézete nagyon hasonló mint posts.create
+    - formba --> @method('PATCH') = method spoofing
+    - csak a kezdőérték a DB-ből jön
+- store és update nagyon hasonló (vagy teljesen azonos) validációkat tartalmaz -> php artisan make:request
