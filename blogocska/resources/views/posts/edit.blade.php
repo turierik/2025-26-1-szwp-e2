@@ -17,12 +17,8 @@
         {{ $message }}
     @enderror<br>
     <textarea rows="5" name="content" class="w-full">{{ old('content', $post -> content) }}</textarea><br>
-    Szerző:
-    <select name="author_id">
-        @foreach ($users as $user)
-            <option value="{{ $user -> id}}" {{ old('author_id', $post -> author_id) == $user -> id ? "selected" : ""}}>{{ $user -> name }}</option>
-        @endforeach
-    </select><br>
+
+    <input type="hidden" name="is_public" hidden="0">
     Publikus? <input type="checkbox" name="is_public" {{ old('is_public', $post -> is_public ? "on" : "off") == 'on' ? "checked" : "" }}><br>
 
     <h3 class="text-xl">Kategóriák</h3>

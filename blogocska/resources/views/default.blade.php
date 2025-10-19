@@ -16,7 +16,20 @@
             <div class="col-span-2">
                 @yield('content')
             </div>
-            <div class="col-span-1">Sidebar.</div>
+            <div class="col-span-1">
+                @guest
+                    <a href="{{ route('login') }}">Bejelentkezés</a><br>
+                    <a href="{{ route('register') }}">Regisztráció</a>
+                @endguest
+
+                @auth
+                    Szia, {{ Auth::user() -> name }}!<br>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <a href="#" onclick="this.closest('form').submit();">Kijelentkezés</a>
+                    </form>
+                @endauth
+            </div>
         </div>
     </div>
 </body>

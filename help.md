@@ -70,8 +70,8 @@ composer install
 npm i
 cp .env.example .env
 php artisan key:generate
-php artisan migrate
-php artisan db:seed
+php artisan migrate --seed
+php artisan storage:link
 composer run dev
 ```
 

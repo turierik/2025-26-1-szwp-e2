@@ -16,6 +16,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $users = User::factory(10)->create();
+        $users -> add(User::factory() -> create([
+            "name" => "Gipsz Jakab",
+            "email" => "admin@szerveroldali.hu",
+            "is_admin" => true
+        ]));
         $posts = collect();
         for ($i = 0; $i < 20; $i++){
             $posts -> add(Post::create([
